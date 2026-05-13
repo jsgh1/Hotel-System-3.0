@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: tcl-transaction-blocks-001-safe-load
+      author: Juan
+      logicalFilePath: 04_tcl/00_transaction_blocks/001_safe_load.sql
+      labels: "tcl,transactions"
+      comment: Safe transaction block example for bulk loading.
+      changes:
+        - sqlFile:
+            path: 001_safe_load.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

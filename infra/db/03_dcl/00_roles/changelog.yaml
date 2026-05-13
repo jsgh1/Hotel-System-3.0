@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dcl-roles-001-access-role
+      author: Juan
+      logicalFilePath: 03_dcl/00_roles/001_access_role.sql
+      labels: "dcl,roles,auth"
+      comment: Creates a shared read-write role and attaches it to the requested login user.
+      changes:
+        - sqlFile:
+            path: 001_access_role.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
