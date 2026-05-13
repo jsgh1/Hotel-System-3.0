@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dml-patches-001-refresh-reports
+      author: Juan
+      logicalFilePath: 02_dml/04_patches/001_patch_refresh_reports.sql
+      labels: "dml,patches"
+      comment: Refreshes derived reports and materialized views.
+      changes:
+        - sqlFile:
+            path: 001_patch_refresh_reports.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
