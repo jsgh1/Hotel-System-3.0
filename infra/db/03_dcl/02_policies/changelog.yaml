@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dcl-policies-001-placeholder
+      author: Juan
+      logicalFilePath: 03_dcl/02_policies/001_policies.sql
+      labels: "dcl,policies"
+      comment: Placeholder for policy management in this delivery.
+      changes:
+        - sqlFile:
+            path: 001_policies.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
