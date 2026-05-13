@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dcl-grants-001-schema-access
+      author: Juan
+      logicalFilePath: 03_dcl/01_grants/001_grants.sql
+      labels: "dcl,grants,auth"
+      comment: Grants the auth user and shared role access to schemas and tables.
+      changes:
+        - sqlFile:
+            path: 001_grants.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

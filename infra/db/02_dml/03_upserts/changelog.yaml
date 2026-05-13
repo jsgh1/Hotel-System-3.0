@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dml-upserts-001-upsert-catalogs
+      author: Juan
+      logicalFilePath: 02_dml/03_upserts/001_upsert_catalogs.sql
+      labels: "dml,upserts"
+      comment: Keeps catalog rows in sync.
+      changes:
+        - sqlFile:
+            path: 001_upsert_catalogs.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

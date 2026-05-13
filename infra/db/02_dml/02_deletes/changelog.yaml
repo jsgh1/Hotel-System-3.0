@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dml-deletes-001-soft-delete-demo
+      author: Juan
+      logicalFilePath: 02_dml/02_deletes/001_soft_delete_demo.sql
+      labels: "dml,deletes"
+      comment: Demonstrates a controlled soft delete.
+      changes:
+        - sqlFile:
+            path: 001_soft_delete_demo.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
