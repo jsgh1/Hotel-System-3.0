@@ -1,5 +1,5 @@
 param(
-    [string]$Host = "localhost",
+    [string]$DbHost = "localhost",
     [int]$Port = 5445,
     [string]$Database = "sistema_hotelero",
     [string]$DatabaseUser = "postgres",
@@ -10,17 +10,17 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-Write-Host "Running Liquibase update against $Host:$Port/$Database as $DatabaseUser"
+Write-Host "Running Liquibase update against ${DbHost}:$Port/$Database as $DatabaseUser"
 
 docker run --rm `
-    -e PGPASSWORD=$DatabasePassword `
-    --network host `
-    -v "${PWD}:/liquibase/workspace" `
-    -w /liquibase/workspace `
-    $LiquibaseImage `
-    liquibase `
-    --url="jdbc:postgresql://$Host:$Port/$Database" `
-    --username=$DatabaseUser `
-    --password=$DatabasePassword `
-    --changeLogFile=$Changelog `
-    update
+  -e PGPASSWORD=$DatabasePassword `
+  --network host `
+  -v "${PWD}:/liquibase/workspace" `
+  -w /liquibase/workspace `
+  $LiquibaseImage `
+  liquibase `
+  --url="jdbc:postgresql://${DbHost}:$Port/$Database" `
+  --username=$DatabaseUser `
+  --password=$DatabasePassword `
+  --changeLogFile=$Changelog `
+  update
